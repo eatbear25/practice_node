@@ -1,0 +1,32 @@
+購物車 API (使用 DB 記錄)
+
+1. 購物車資料表設計
+  PK, member_id, product_id, quantity, created_at
+
+2. 要有哪些 API ?
+
+  購物車內容物[列表]:
+    GET  /shopping-cart
+
+  項目加入購物車(給哪些資料: product_id, quantity)
+    POST  /shopping-cart
+
+      項目加一(給哪些資料: product_id)
+        POST  /shopping-cart/increase
+      項目減一(給哪些資料: product_id)
+        POST  /shopping-cart/decrease
+      直接設定項目的數量(給哪些資料: product_id, quantity)
+        POST  /shopping-cart
+
+      累加項目的數量(給哪些資料: product_id, quantity)
+        狀態: {product_id:3, quantity:2}
+        POST  /shopping-cart/add?product_id=3&quantity=1
+        狀態: {product_id:3, quantity:3}
+
+  刪除項目(給哪些資料: product_id)
+    DELETE /shopping-cart
+
+  清空購物車
+    DELETE /shopping-cart/all
+
+定單成立, SQL transaction
