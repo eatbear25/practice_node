@@ -16,6 +16,7 @@ import productsRouter from "./routes/products/index.js";
 import cartRouter from "./routes/cart/index.js";
 import orderRouter from "./routes/orders/index.js";
 import ecpayRouter from "./routes/ecpay-test-only/index.js";
+import linePayRouter from "./routes/line-pay-test-only/index.js";
 
 const MysqlStore = mysql_session(session);
 const sessionStore = new MysqlStore({}, db);
@@ -57,6 +58,9 @@ app.use("/api/orders", orderRouter);
 
 // ##### ECPay #####
 app.use("/api/ecpay-test-only", ecpayRouter);
+
+// ##### Line Pay #####
+app.use("/api/line-pay-test-only", linePayRouter);
 
 // 測試用 pay
 app.get("/pay", (req, res) => {

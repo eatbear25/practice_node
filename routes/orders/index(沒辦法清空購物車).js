@@ -126,14 +126,6 @@ router.post("/", async (req, res) => {
       [orderItems]
     );
 
-    // **刪除購物車中已結帳的商品**
-    const productIds = items.map((item) => item.product_id);
-    await db.query(
-      `DELETE FROM cart_items WHERE cart_id = ? AND product_id IN (?)`,
-      [user_id, productIds]
-    );
-    console.log(`已刪除用戶 ${user_id} 的已結帳商品：`, productIds);
-
     // 生成付款連結
     const paymentUrl =
       payment_method === "ecpay"

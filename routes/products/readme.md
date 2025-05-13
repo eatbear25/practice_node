@@ -3,10 +3,10 @@
 ## 所有商品
 
 - 取得所有商品
-  url: GET http://localhost:3001/products/api
+  url: GET http://localhost:3001/api/products
 
 - 轉換頁碼
-  url: GET http://localhost:3001/products/api?page={頁數}
+  url: GET http://localhost:3001/api/products?page={頁數}
 
 - 後端回應
   {

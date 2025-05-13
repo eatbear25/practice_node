@@ -15,9 +15,12 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.17",
     "nodemon": "^3.1.9"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
@@ -26,6 +29,7 @@
     "express-mysql-session": "^3.0.3",
     "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
+    "line-pay-merchant": "^0.6.0",
     "moment-timezone": "^0.5.48",
     "multer": "^1.4.5-lts.2",
     "mysql2": "^3.14.0",
